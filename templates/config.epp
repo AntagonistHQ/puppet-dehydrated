@@ -49,3 +49,6 @@ OCSP_MUST_STAPLE='<%= bool2str($dehydrated::ocsp_must_staple, 'yes', 'no') %>'
 <% unless $dehydrated::ocsp_fetch =~ Undef { -%>
 OCSP_FETCH='<%= bool2str($dehydrated::ocsp_fetch, 'yes', 'no') %>'
 <% } -%>
+<% unless $dehydrated::backoff =~ Undef { -%>
+BACKOFF='<%= $dehydrated::backoff %>'
+<% } -%>

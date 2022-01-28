@@ -28,6 +28,7 @@
 # @param ocsp_fetch Option to enable fetching oscp after requesting certificate
 # @param ocsp_must_staple Option to add CSR-flag indicating OCSP stapling to be mandatory.
 # @param timeout Execution timeout for dehydrated tool.
+# @param backoff Backoff schedule for failures
 class dehydrated (
   String                      $apache_user,
   String                      $bin,
@@ -61,6 +62,7 @@ class dehydrated (
   Optional[Boolean]                                $ocsp_fetch           = undef,
   Optional[Boolean]                                $ocsp_must_staple     = undef,
   Optional[Integer[0]]                             $timeout              = undef,
+  Optional[String]                                 $backoff              = undef,
 ) {
   include dehydrated::user
 
