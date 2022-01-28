@@ -46,3 +46,6 @@ CONTACT_EMAIL=<%= String($dehydrated::contact_email, '%p') %>
 <% unless $dehydrated::ocsp_must_staple =~ Undef { -%>
 OCSP_MUST_STAPLE='<%= bool2str($dehydrated::ocsp_must_staple, 'yes', 'no') %>'
 <% } -%>
+<% unless $dehydrated::ocsp_fetch =~ Undef { -%>
+OCSP_FETCH='<%= bool2str($dehydrated::ocsp_fetch, 'yes', 'no') %>'
+<% } -%>

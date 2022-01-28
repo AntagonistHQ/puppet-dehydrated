@@ -25,6 +25,7 @@
 # @param private_key_rollover Create an extra private key for rollover.
 # @param key_algo Which public key algorithm should be used?
 # @param contact_email E-mail address Let's Encrypt can use to reach you regarding your certificates.
+# @param ocsp_fetch Option to enable fetching oscp after requesting certificate
 # @param ocsp_must_staple Option to add CSR-flag indicating OCSP stapling to be mandatory.
 # @param timeout Execution timeout for dehydrated tool.
 class dehydrated (
@@ -57,6 +58,7 @@ class dehydrated (
   Optional[Boolean]                                $private_key_rollover = undef,
   Optional[Enum['rsa', 'prime256v1', 'secp384r1']] $key_algo             = undef,
   String                                           $contact_email, # lint:ignore:parameter_order
+  Optional[Boolean]                                $ocsp_fetch           = undef,
   Optional[Boolean]                                $ocsp_must_staple     = undef,
   Optional[Integer[0]]                             $timeout              = undef,
 ) {
