@@ -29,6 +29,7 @@
 # @param ocsp_must_staple Option to add CSR-flag indicating OCSP stapling to be mandatory.
 # @param timeout Execution timeout for dehydrated tool.
 # @param backoff Backoff schedule for failures
+# @param keep_going keep going when one domain fails
 class dehydrated (
   String                      $apache_user,
   String                      $bin,
@@ -63,6 +64,7 @@ class dehydrated (
   Optional[Boolean]                                $ocsp_must_staple     = undef,
   Optional[Integer[0]]                             $timeout              = undef,
   Optional[String]                                 $backoff              = undef,
+  Optional[Boolean]                                $keep_going           = undef,
 ) {
   include dehydrated::user
 

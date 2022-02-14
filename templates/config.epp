@@ -52,3 +52,6 @@ OCSP_FETCH='<%= bool2str($dehydrated::ocsp_fetch, 'yes', 'no') %>'
 <% unless $dehydrated::backoff =~ Undef { -%>
 BACKOFF='<%= $dehydrated::backoff %>'
 <% } -%>
+<% if $dehydrated::keep_going { -%>
+PARAM_KEEP_GOING=yes
+<% } -%>
